@@ -1,5 +1,5 @@
-docker-machine ssh Char mkdir /home/docker/Abathur/
-docker-machine scp hello.py Char:/home/docker/Abathur/
-docker run -dit --name Abathur -v /home/docker/Abathur:/root -p $(docker-machine ip Char):3000:3000 python:2-slim
+docker-machine ssh Char mkdir /home/flask
+docker-machine scp hello.py Char:/home/flask
+docker run -dit --name Abathur -v /home/flask:/root -p $(docker-machine ip Char):3000:3000 python:2-slim
 docker exec Abathur pip install flask
 docker exec --env FLASK_APP='/root/hello.py' Abathur flask run --host=0.0.0.0 --port=3000

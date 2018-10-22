@@ -1,1 +1,1 @@
-docker container rm $(docker container ls -q) --force
+docker container rm $(docker container ls -aq) --force
